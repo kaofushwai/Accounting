@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Accouting List</title> 
+	<link rel="stylesheet" href="jquery.mobile-1.3.1.min.css" />
+  <script src="jquery-1.7.1.min.js"></script>
+  <script src="jquery.mobile-1.3.1.min.js"></script>
+	<script src="app.js"></script>
+	
+</head> 
+	
+<body> 
+
+
+<div data-role="page" id="home">
+
+
+	<div data-role="content">
+     <h1>Accounting Item</h1>
+     <pr>Produce by Panhsuanjen</pr>
+		 <br>
+       <br>
+		<h1>Add a account</h1>
+  
+    <a><input type="text" id="costTitle" value="" placeholder="Num: time:" ></a>
+    <input type="text" id="costDetails" value="" placeholder="Item:food $:200NT" >
+    <a id="btnSaveCost" data-role="button">Save</a>
+  	</div>
+		<a id="btnViewCost" data-role="button">View</a>
+	</div>
+
+
+ <div data-role="page" id="view-cost" data-add-back-btn="true">
+
+     <div data-role=header>
+      <h1>List of Cost</h1>
+     	<a data-role="button"  class="ui-btn-right" id="clearAllCostsBtn">Clear</a>
+     </div>
+
+     <div id="Cost-list" data-role="content">
+  
+     </div>
+
+ </div> 
+
+</body>
+</html>
