@@ -40,7 +40,6 @@
 							$("#clearAllCostsBtn").click(function(){
 								 localStorage.clear();
 								 $("#Cost-list").html("");
-								 this.cleanall();
 								 alert("All Costs have got cleared");
 							});
 						
