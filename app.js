@@ -2,20 +2,20 @@
 
 (function(exports) {
 	var Account = function() {
+		
   };
 	Account.prototype = {
 			start(){
 					
-
 							$("#btnViewCost").click(function(){
-
+								
 								$.mobile.changePage ($("#view-cost"));
-
+			
 								$("#Cost-list").html("");
-								for (i=0; i<=localStorage.length-1; i++)  
+								for (var i=0; i<=localStorage.length-1; i++)  
 								{  
-									key=localStorage.key(i);  
-									val = localStorage.getItem(key);
+									var key=localStorage.key(i);  
+									var val = localStorage.getItem(key);
 									var costElement = $("<div data-role='collapsible' data-mini='true'/>");
 									var h3CostTitle = $("<h3/>").text(key);
 									var pCostDetails = $("<p/>").text(val);
@@ -27,30 +27,31 @@
 							});
 
 
-							$("#btnSaveCost").click(function(){
-								costTitle = $("#costTitle").val();
-								costDetails = $("#costDetails").val();
-
-								if (window.localStorage) {
-										localStorage.setItem(costTitle,costDetails);
+							//$("#btnSaveCost").click(function(){
+							document.getElementById('btnSaveCost').addEventListener('click',function(){
+									var costTitle = $("#costTitle").val();
+									var costDetails = $("#costDetails").val();
+									localStorage.setItem(costTitle,costDetails);
 									alert("Your cost has been saved");
-								}
-								this.clean();
-								$("#costTitle").focus();
-								});
+									$("#costTitle").val("");
+									$("#costDetails").val("");
+									$("#costTitle").focus();
+							});
 							$("#clearAllCostsBtn").click(function(){
+								 localStorage.clear();
+								 $("#Cost-list").html("");
 								 this.cleanall();
 								 alert("All Costs have got cleared");
 							});
-					
+						
 			},
 			clean(){
-					$("#costTitle").val("");
-					$("#costDetails").val("");
+				$("#costTitle").val("");
+				$("#costDetails").val("");
+				$("#costTitle").focus();
 			},
 			cleanall(){
-					localStorage.clear();
-					$("#Cost-list").html("");
+				$("#Cost-list").html("");
 			}
 	};
 	exports.Account = Account;
@@ -86,23 +87,19 @@
 		      localStorage.setItem(costTitle,costDetails);
 			  alert("Your cost has been saved");
 		  }
-			clean();
-		  $("#costTitle").focus();
-	    });
-		$("#clearAllCostsBtn").click(function(){
-		   cleanall();
-		   alert("All Costs have got cleared");
-		});
-		function clean(){
 			$("#costTitle").val("");
 		  $("#costDetails").val("");
-		}
-		function cleanall(){
-			localStorage.clear();
- 		  $("#Cost-list").html("");
-		}
-});
+		  $("#costTitle").focus();
 
-*/
+	    });
+		$("#clearAllCostsBtn").click(function(){
+		   localStorage.clear();
+ 		   $("#Cost-list").html("");
+		   alert("All Costs have got cleared");
+		});
+		
+});*/
+
+
 
 
