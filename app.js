@@ -35,11 +35,13 @@
 									alert("Your cost has been saved");
 									$("#costTitle").val("");
 									$("#costDetails").val("");
-									$("#costTitle").focus();
+									$("#costTitle").focus();	
+								//this.clean();
 							});
 							$("#clearAllCostsBtn").click(function(){
 								 localStorage.clear();
-								 $("#Cost-list").html("");
+									$("#Cost-list").html(""); 
+									//this.cleanall();
 								 alert("All Costs have got cleared");
 							});
 						
