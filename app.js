@@ -28,23 +28,18 @@
 
 
 							//$("#btnSaveCost").click(function(){
-							document.getElementById('btnSaveCost').addEventListener('click',function(){
+							document.getElementById('btnSaveCost').addEventListener('click',(function(){
 									var costTitle = $("#costTitle").val();
 									var costDetails = $("#costDetails").val();
 									localStorage.setItem(costTitle,costDetails);
-									alert("Your cost has been saved");
-									$("#costTitle").val("");
-									$("#costDetails").val("");
-									$("#costTitle").focus();	
-								//this.clean();
-							});
-							$("#clearAllCostsBtn").click(function(){
+									alert("Your cost has been saved");	
+								  this.clean();
+							}).bind(Account.prototype));
+							$("#clearAllCostsBtn").click((function(){
 								 localStorage.clear();
-									$("#Cost-list").html(""); 
-									//this.cleanall();
+									this.cleanall();
 								 alert("All Costs have got cleared");
-							});
-						
+							}).bind(Account.prototype));		
 			},
 			clean(){
 				$("#costTitle").val("");
