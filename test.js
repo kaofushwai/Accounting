@@ -10,18 +10,18 @@ describe('Test Some function',function(){
     $("#costDetails").val("3000");
     Acc.clean();
     it('Clear costTitle',function(){
-      assert.equal($("#costTitle").val,'');
+      assert.equal($("#costTitle").val(),'');
     })
     it('Clear costDetails',function(){
-      assert.equal($("#costDetails").val,'');
+      assert.equal($("#costDetails").val(),'');
     })
   })
   
   describe('Clear the Cost-list',function(){
     it('Clear the list',function(){
-      $("#Cost-list").val("TATFATATAUTATATACTATATATATKATA");
+      $("#Cost-list").html("TATFATATAUTATATACTATATATATKATA");
       Acc.cleanall();
-      assert.equal($("#costTitle").val,'');
+      assert.equal($("#Cost-list").html(),'');
     })
   })
   
